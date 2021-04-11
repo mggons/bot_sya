@@ -1,13 +1,3 @@
-/*
-* Tambahin nama author lah
-* Author MhankBarBar, Farhan
-* Tambahin ya Cape Gan ngefix² Yg Ga work
-* Jan numpang nama doank
-- What's New?
-* New Features
-*/
-// KALO NGUBAH YG TELITI NTAR GA WORK MALAH NYALAHIN HADEHH
-// DAN YG NYURI TANPA KASIH CREDIT INGAT BRO LU SAMPAH
 const {
   WAConnection,
     MessageType,
@@ -81,7 +71,7 @@ rdaftar = "@denssptraa"
 rmenu = "@denssptraa"
 botinfo = "@denssptraa"
 limitt = 999999999
-memberLimit = 10
+memberLimit = 100
 ban = []
 premium = ["6285866295942@s.whatsapp.net","6285876210829@s.whatsapp.net"]
 
@@ -128,10 +118,10 @@ async function starts() {
 				}
 				teks = `ʜᴀʟʟᴏ @${num.split('@')[0]}👋\nꜱᴇʟᴀᴍᴀᴛ ᴅᴀᴛᴀɴɢ ᴅɪ ɢʀᴏᴜᴘ *${mdata.subject}*\n\n ────────────────
 ┏━━━━━━━━━━━━━━━
-┃────「 *_ɪɴᴛʀᴏ_* 」─────
+┃────「 *_INICIO_* 」─────
 ┃━━━━━━━━━━━━━━━
-┠⊷️ *ɴᴀᴍᴀ* :
-┠⊷️ *ᴜᴍᴜʀ* :
+┠⊷️ *ɴombre* :
+┠⊷️ *Numero* :
 ┠⊷️ *ɢᴇɴᴅᴇʀ* :
 ┠⊷️ *ᴀꜱᴀʟ ᴋᴏᴛᴀ* :
 ┗━━━━━━━━━━━━━━━
