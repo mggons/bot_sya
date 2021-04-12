@@ -53,20 +53,20 @@ const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRando
 
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
-            + 'FN:デ ニ ス\n'
-            + 'ORG:Owner Dns Bot;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=6285866295942:+62 858-66295-942\n'
+            + 'FN:Jesus\n'
+            + 'ORG:JDMTECH;\n'
+            + 'TEL;type=CELL;type=VOICE;waid=573144182071:+57 314-418-2071\n'
             + 'END:VCARD'
        
 const vcard1 = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n'
-            + 'FN:Caca Cans\n'
-            + 'ORG:Co Owner Dns Bot;\n'
-            + 'TEL;type=CELL;type=VOICE;waid=6285876210829:+62 858-76210-829\n'
+            + 'FN:Jesus 2\n'
+            + 'ORG:JDMTECH 2;\n'
+            + 'TEL;type=CELL;type=VOICE;waid=573188411990:+57 318-841-1990\n'
             + 'END:VCARD'
 
 prefix = "#"
-name = "DNS BOT"
+name = "Soporte y Aportes BOT"
 rdaftar = "@denssptraa"
 rmenu = "@denssptraa"
 botinfo = "@denssptraa"
@@ -96,10 +96,10 @@ async function starts() {
 
 	fs.existsSync('./Fxc7.json') && denz.loadAuthInfo('./Fxc7.json')
 	denz.on('connecting', () => {
-		start('2', 'Connecting...')
+		start('2', 'Conectando ...')
 	})
 	denz.on('open', () => {
-		success('2', 'Connected')
+		success('2', 'Conectado.')
 	})
 	await denz.connect({timeoutMs: 30*1000})
         fs.writeFileSync('./Fxc7.json', JSON.stringify(denz.base64EncodedAuthInfo(), null, '\t'))
@@ -122,8 +122,6 @@ async function starts() {
 ┃━━━━━━━━━━━━━━━
 ┠⊷️ *ɴombre* :
 ┠⊷️ *Numero* :
-┠⊷️ *ɢᴇɴᴅᴇʀ* :
-┠⊷️ *ᴀꜱᴀʟ ᴋᴏᴛᴀ* :
 ┗━━━━━━━━━━━━━━━
 
 ᴋᴇᴛɪᴋ ${prefix}daftar ᴜɴᴛᴜᴋ ᴍᴇᴍᴜʟᴀɪ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ʙᴏᴛ`
@@ -2632,30 +2630,29 @@ break
 					}
 					await limitAdd(sender) 
 					break 
-					 case 'trigger':
-					if (!isUser) return reply(mess.only.userB)
-            var imgbb = require('imgbb-uploader')
-           if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-           ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
-           reply(mess.wait)
-         owgi = await denz.downloadAndSaveMediaMessage(ger)
-           anu = await imgbb("08579d070df9a07cb1c2ee565aece767", owgi)
-        teks = `${anu.display_url}`
-         ranp = getRandom('.gif')
-        rano = getRandom('.webp')
-        anu1 = `https://some-random-api.ml/canvas/triggered?avatar=${teks}`
-       exec(`wget ${anu1} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-                                                fs.unlinkSync(ranp)
-                                                if (err) return reply(mess.error.stick)
-                                                nobg = fs.readFileSync(rano)
-                                                denz.sendMessage(from, nobg, sticker, {quoted: mek})
-                                                fs.unlinkSync(rano)
-                                        })
-                                    
-                                             } else {
-                                                 reply('Gunakan foto!')
-                                          }
-                                             break
+	      case 'trigger':
+	      if (!isUser) return reply(mess.only.userB)
+              var imgbb = require('imgbb-uploader')
+              if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
+              ger = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+              reply(mess.wait)
+              owgi = await denz.downloadAndSaveMediaMessage(ger)
+              anu = await imgbb("08579d070df9a07cb1c2ee565aece767", owgi)
+              teks = `${anu.display_url}`
+              ranp = getRandom('.gif')
+              rano = getRandom('.webp')
+              anu1 = `https://some-random-api.ml/canvas/triggered?avatar=${teks}`
+      	      exec(`wget ${anu1} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+              fs.unlinkSync(ranp)
+              if (err) return reply(mess.error.stick)
+              nobg = fs.readFileSync(rano)
+              denz.sendMessage(from, nobg, sticker, {quoted: mek})
+              fs.unlinkSync(rano)
+                })                
+                } else {
+                reply('Gunakan foto!')
+                }
+                break
 
 				case 'img2url':
 			if (!isUser) return reply(mess.only.userB)
@@ -2678,52 +2675,52 @@ break
             await limitAdd(sender) 	
             break  
 
-                 case 'kalkulator':
-					if (isBanned) return reply(mess.only.benned)    
-				   if (!isUser) return reply(mess.only.userB)
-				   				
-				   if (isLimit(sender)) return reply(limitend(pushname2))
-				     if (args.length < 1) return reply(`[❗] Kirim perintah *${prefix}kalkulator [ Angka ]*\nContoh : ${prefix}kalkulator 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /`)
-				    mtk = `${body.slice(12)}`
-				    anu = await fetchJson(`https://api.vhtear.com/calculator?value=${mtk}&apikey=${VthearApi}`, {method: 'get'})
-				    denz.sendMessage(from, `*${anu.result.data}*`, text, {quoted: mek})
-				    await limitAdd(sender) 	
-				    break 
-				case 'owner':
-                 denz.sendMessage(from, {displayname: "jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
-                 denz.sendMessage(from, '*_ꜱᴀᴠᴇ ʏᴀ ɴᴛᴀʀ ꜱᴀᴠᴇ ʙᴀᴄᴋ :)_*',text, { quoted: mek} )
-                 break
-                 case 'coowner':
-                 denz.sendMessage(from, {displayname: "jeff", vcard: vcard1}, MessageType.contact, { quoted: mek})
-                 denz.sendMessage(from, '*_ɪᴛᴜ ᴘᴀᴄᴀʀᴋᴜ ᴇʜ ᴍᴀᴋꜱᴜᴅɴʏᴀ ᴏᴡɴᴇʀᴋᴜ >-<_*',text, { quoted: mek} )
-                 break
+                case 'kalkulator':
+		if (isBanned) return reply(mess.only.benned)    
+		if (!isUser) return reply(mess.only.userB)  				
+		if (isLimit(sender)) return reply(limitend(pushname2))
+		if (args.length < 1) return reply(`[❗] Kirim perintah *${prefix}kalkulator [ Angka ]*\nContoh : ${prefix}kalkulator 12*12\n*NOTE* :\n- Untuk Perkalian Menggunakan *\n- Untuk Pertambahan Menggunakan +\n- Untuk Pengurangan Mennggunakan -\n- Untuk Pembagian Menggunakan /`)
+		mtk = `${body.slice(12)}`
+		anu = await fetchJson(`https://api.vhtear.com/calculator?value=${mtk}&apikey=${VthearApi}`, {method: 'get'})
+		denz.sendMessage(from, `*${anu.result.data}*`, text, {quoted: mek})
+		await limitAdd(sender) 	
+				
+		break 
+		case 'owner':
+                denz.sendMessage(from, {displayname: "jeff", vcard: vcard}, MessageType.contact, { quoted: mek})
+                denz.sendMessage(from, '*_Escribeme para mas informacion. Recuerde donar para apoyarnos mutuamente ^.^_*',text, { quoted: mek}
+		break
+						 
+                case 'coowner':
+                denz.sendMessage(from, {displayname: "jeff", vcard: vcard1}, MessageType.contact, { quoted: mek})
+                denz.sendMessage(from, '*_En caso de no responder usa el #owner, aqui me podras encontrar rapidamente >-<, Recuerde donar para apoyarnos mutuamente ^.^_*',text, { quoted: mek} )
+                break
+				
                 case 'fitnah':
-                 if (isBanned) return reply(mess.only.benned)    
-				if (!isUser) return reply(mess.only.userB)
-           				
-				if (args.length < 1) return reply(`Usage :\n${prefix}fitnah [@tag/pesan/balasanbot]]\n\nEx : \n${prefix}fitnah @tagmember/hai/hai juga`)
-				var gh = body.slice(8)
-				mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					var replace = gh.split("/")[0];
-					var target = gh.split("/")[1];
-					var bot = gh.split("/")[2];
-					denz.sendMessage(from, `${bot}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${target}` }}})
-					break
+                if (isBanned) return reply(mess.only.benned)    
+		if (!isUser) return reply(mess.only.userB)	
+		if (args.length < 1) return reply(`Usage :\n${prefix}fitnah [@tag/pesan/balasanbot]]\n\nEx : \n${prefix}fitnah @tagmember/hai/hai juga`)
+		var gh = body.slice(8)
+		mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+			var replace = gh.split("/")[0];
+			var target = gh.split("/")[1];
+			var bot = gh.split("/")[2];
+			denz.sendMessage(from, `${bot}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned}`, ...(from ? { remoteJid: from } : {}) }, message: { conversation: `${target}` }}})
+		break
 
-				case 'infogc':
-				case 'groupinfo':
-				case 'infogrup':
-				case 'grupinfo':
-				if (isBanned) return reply(mess.only.benned)  
-				 				
-				if (!isUser) return reply(mess.only.userB)
+		case 'infogc':
+		case 'groupinfo':
+		case 'infogrup':
+		case 'grupinfo':
+		if (isBanned) return reply(mess.only.benned)   				
+		if (!isUser) return reply(mess.only.userB)
                 denz.updatePresence(from, Presence.composing)
                 if (!isGroup) return reply(mess.only.group)
                 try {
-					ppUrl = await denz.getProfilePicture(from)
-					} catch {
-					ppUrl = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-					}
+			ppUrl = await denz.getProfilePicture(from)
+			} catch {
+			ppUrl = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+			}
                 reply(mess.wait) // leave empty to get your own
 			    buffer = await getBuffer(ppUrl)
 		        denz.sendMessage(from, buffer, image, {quoted: mek, caption: `*NAME* : ${groupName}\n*MEMBER* : ${groupMembers.length}\n*ADMIN* : ${groupAdmins.length}\n*DESK* : ${groupDesc}`})
